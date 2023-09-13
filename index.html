@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CRUD App</title>
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/datatables/datatables.min.css"> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        crossorigin="anonymous">
+    <!-- Ensure the order of the CSS files. DataTables CSS should come after Bootstrap. -->
+    <!-- <link href="css/jquery.dataTables.min.css" rel="stylesheet"> -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <style>
+        .button-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .button-container .btn {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <h1>CRUD Application</h1>
+        <button class="btn btn-primary" data-toggle="modal" data-target="#userModal">Add User</button>
+
+        <table id="userTable" class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>Profile Picture</th>
+                    <th>Name</th>
+                    <th>Created Time</th>
+                    <th>Updated Time</th>
+                    <th>Department</th>
+                    <th>Uploaded Files</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div class="modal fade" id="userModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add/Edit User</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="userForm">
+                        <input type="hidden" id="userId">
+                        <div class="form-group">
+                            <label>Profile Picture</label>
+                            <input type="file" id="profilePicture" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" id="name" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Department</label>
+                            <select id="department" class="form-control">
+                                <option>HR</option>
+                                <option>Engineering</option>
+                                <option>Finance</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Multiple File Upload</label>
+                            <input type="file" id="multipleFiles" multiple class="form-control">
+                        </div>
+                        <!-- <button type="submit" class="btn btn-primary">Save</button> -->
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" id="saveBtn" class="btn btn-primary">Save</button>
+                            <button type="button" id="updateBtn" class="btn btn-primary"
+                                style="display:none;">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Scripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.bootstrap4.min.js"></script>
+    <script src="js/sweetalert2@11.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/app.js"></script>
+
+
+    <!-- <script src="assets/js/bootstrap.min.js"></script>
+<script src="vendor/datatables/datatables.min.js"></script>
+<script src="vendor/moment.js/moment.min.js"></script>
+<script src="app.js"></script> -->
+
+</body>
+
+</html>
